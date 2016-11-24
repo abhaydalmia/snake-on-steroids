@@ -1,27 +1,10 @@
-################################################################################
-# These are variables for the GBA toolchain build
-# You can add others if you wish to
-# ***** YOUR NAME HERE *****
-################################################################################
 
-# The name of your desired GBA game
-# This should be a just a name i.e MyFirstGBAGame
-# No SPACES AFTER THE NAME.
 PROGNAME = SnakeOnSteroids
 
-# The object files you want to compile into your program
-# This should be a space (SPACE!) separated list of .o files
+
 OFILES = main.o myLib.o pics/startBackground.o text.o font.o pics/endBackground.o pics/foodPic.o
 
-# The header files you have created.
-# This is necessary to determine when to recompile for files.
-# This should be a space (SPACE!) separated list of .h files
 HFILES = myLib.h pics/startBackground.h text.h pics/endBackground.h pics/foodPic.h
-
-################################################################################
-# These are various settings used to make the GBA toolchain work
-# DO NOT EDIT BELOW.
-################################################################################
 
 TOOLDIR  = /usr/local/cs2110-tools
 ARMLIB   = $(TOOLDIR)/arm-thumb-eabi/lib
@@ -40,9 +23,7 @@ OBJCOPY  = $(TOOLDIR)/bin/arm-thumb-eabi-objcopy
 GDB      = $(TOOLDIR)/bin/arm-thumb-eabi-gdb
 CFILES   = $(OFILES:.o=.c)
 
-################################################################################
-# These are the targets for the GBA build system
-################################################################################
+
 
 all : CFLAGS += $(CRELEASE)
 all : $(PROGNAME).gba
